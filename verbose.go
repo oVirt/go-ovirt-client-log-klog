@@ -12,11 +12,11 @@ func NewVerbose(
 	warningLevel klog.Verbose,
 	errorLevel klog.Verbose,
 ) log.Logger {
-	return &verboseLogger {
-		debugLevel: debugLevel,
-		infoLevel: infoLevel,
+	return &verboseLogger{
+		debugLevel:   debugLevel,
+		infoLevel:    infoLevel,
 		warningLevel: warningLevel,
-		errorLevel: errorLevel,
+		errorLevel:   errorLevel,
 	}
 }
 

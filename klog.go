@@ -12,8 +12,7 @@ import (
 // - Warning logs are sent to Warningf
 // - Error logs are sent to Errorf
 func New() log.Logger {
-	return &logger{
-	}
+	return &logger{}
 }
 
 type logger struct {

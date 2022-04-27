@@ -1,7 +1,9 @@
 package kloglogger
 
 import (
-	log "github.com/ovirt/go-ovirt-client-log/v2"
+	"context"
+
+	log "github.com/ovirt/go-ovirt-client-log/v3"
 	"k8s.io/klog/v2"
 )
 
@@ -25,6 +27,10 @@ type verboseLogger struct {
 	infoLevel    klog.Verbose
 	warningLevel klog.Verbose
 	errorLevel   klog.Verbose
+}
+
+func (v verboseLogger) WithContext(_ context.Context) log.Logger {
+	return v
 }
 
 func (v verboseLogger) Debugf(format string, args ...interface{}) {

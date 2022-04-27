@@ -1,7 +1,9 @@
 package kloglogger
 
 import (
-	log "github.com/ovirt/go-ovirt-client-log/v2"
+	"context"
+
+	log "github.com/ovirt/go-ovirt-client-log/v3"
 	"k8s.io/klog/v2"
 )
 
@@ -16,6 +18,10 @@ func New() log.Logger {
 }
 
 type logger struct {
+}
+
+func (l logger) WithContext(_ context.Context) log.Logger {
+	return l
 }
 
 func (l logger) Debugf(format string, args ...interface{}) {

@@ -5,7 +5,7 @@ import (
 	"strings"
 	"testing"
 
-	kloglogger "github.com/ovirt/go-ovirt-client-log-klog"
+	kloglogger "github.com/ovirt/go-ovirt-client-log-klog/v2"
 	"k8s.io/klog/v2"
 )
 
